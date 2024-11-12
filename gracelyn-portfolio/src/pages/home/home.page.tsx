@@ -18,6 +18,7 @@ function HomeMobile() {
             <Landing />
             <Blurb />
             <Galleries />
+            <Socials />
         </div>
     )
 }
@@ -80,6 +81,14 @@ function Galleries() {
                     </div>
                 </div>
             </div>
+        </section>
+    )
+}
+
+function Socials() {
+    return (
+        <section className="snap-center min-h-full min-w-full">
+        Hello
         </section>
     )
 }
