@@ -29,17 +29,17 @@ export default function NavigationMobile() {
             </div>
             :
             <div className="w-[75vw] h-screen bg-black bg-opacity-75 text-white pl-2 pt-2">
-                <div className="flex w-[75%]" onClick={() => toggleMenu(!showMenu)}>
+                <div className="flex w-[75%] h-[5%]" onClick={() => toggleMenu(!showMenu)}>
                     {closeIcon}
                     <p>Close</p>
                 </div>
-                <div className="w-[75%]">
+                <div className="w-[75%] h-[5%]">
                     <Link to="/" onClick={() => toggleMenu(!showMenu)} className="flex">
                         {homeIcon}
                         <p>Home</p>
                     </Link>
                 </div>
-                <div>
+                <div className="w-[75%] h-[5%]">
                     <Link to="/about" onClick={() => toggleMenu(!showMenu)} className="flex">
                         {aboutIcon}
                         <p>About</p>

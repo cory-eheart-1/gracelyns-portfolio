@@ -13,6 +13,40 @@ function Home() {
 }
 
 function HomeMobile() {
+    return (
+        <div className="flex flex-col overflow-y-scroll snap-y snap-mandatory h-dvh w-dvw">
+            <Landing />
+            <Blurb />
+            <Galleries />
+        </div>
+    )
+}
+
+function Landing() {
+    return (
+        <section className="snap-center min-h-full bg-banner-image min-w-full bg-center bg-cover">
+            <div className="w-full h-full flex flex-col justify-center items-center backdrop-blur-sm">
+                <p className="text-white w-64 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-center text-3xl">Gracelyn Johnson</p>
+                <p className="text-white w-48 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-center">Photography & Artwork</p>
+            </div>
+        </section>
+    )
+}
+
+function Blurb() {
+    return (
+        <section className="snap-center min-h-full min-w-full">
+            <div className="w-full h-full flex flex-col justify-between items-center">
+                <div className="w-full h-[65dvh] bg-blurb-banner bg-cover bg-center">
+
+                </div>
+                <div className="w-full h-[35dvh] border-4 border-black">Here is a small blurb about me.</div>
+            </div>
+        </section>
+    )
+}
+
+function Galleries() {
     const cards_1 = [
         ["Headshots", "bg-headshot-banner"],
         ["Events", "bg-headshot-banner"],
@@ -26,35 +60,27 @@ function HomeMobile() {
     ]
 
     return (
-        <div className="flex flex-col overflow-y-scroll snap-y snap-mandatory h-screen w-screen">
-            <section className="snap-start min-h-full bg-banner-image min-w-full bg-center bg-cover">
-                <div className="w-full h-full flex flex-col justify-center items-center backdrop-blur-sm">
-                    <p className="text-white w-64 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-center text-3xl">Gracelyn Johnson</p>
-                    <p className="text-white w-48 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] text-center">Photography & Artwork</p>
-                </div>
-            </section>
-            <section className="snap-start min-h-full min-w-full bg-black text-white">
-                <h1 className="h-[7vh] w-full text-center leading-[6vh] text-3xl">Galleries</h1>
-                <div className="h-[93vh] w-full bg-gradient-to-t from-white flex flex-col justify-evenly">
-                    <div className="flex justify-evenly w-full h-full">
-                        <div className="flex flex-col justify-around items-center">
-                            {cards_1.map((card, index) => (
-                                <div className={"h-[25vh] w-[35vw] rounded-md bg-cover bg-no-repeat bg-center relative " + card[1]}>
-                                    <p className="w-full text-center text-lg bg-black bg-opacity-35 absolute bottom-0">{card[0]}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="flex flex-col justify-around items-center">
-                            {cards_2.map((card, index) => (
-                                <div className={"h-[25vh] w-[35vw] rounded-md bg-cover bg-no-repeat bg-center relative " + card[1]}>
-                                    <p className="w-full text-center text-lg bg-black bg-opacity-35 absolute bottom-0">{card[0]}</p>
-                                </div>
-                            ))}
-                        </div>
+        <section className="snap-center min-h-full min-w-full bg-black text-white">
+            <h1 className="h-[7dvh] w-full text-center leading-[6vh] text-3xl">Galleries</h1>
+            <div className="h-[93dvh] w-full bg-gradient-to-t from-white flex justify-center items-center">
+                <div className="flex justify-evenly w-full h-full">
+                    <div className="flex flex-col justify-around items-center">
+                        {cards_1.map((card) => (
+                            <div className={"h-[25vh] w-[40vw] rounded-md bg-cover bg-no-repeat bg-center relative " + card[1]}>
+                                <p className="w-full text-center text-lg bg-black bg-opacity-35 absolute bottom-0">{card[0]}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex flex-col justify-around items-center">
+                        {cards_2.map((card) => (
+                            <div className={"h-[25vh] w-[40vw] rounded-md bg-cover bg-no-repeat bg-center relative " + card[1]}>
+                                <p className="w-full text-center text-lg bg-black bg-opacity-35 absolute bottom-0">{card[0]}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     )
 }
 
