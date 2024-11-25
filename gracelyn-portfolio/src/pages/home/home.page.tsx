@@ -89,33 +89,41 @@ function Contact() {
     return (
         <section className="snap-center min-h-full min-w-full">
         <form>
-            <div>
-                <label>First Name</label>
-                <input type="text" required />
+            <div className="flex px-4">
+                <div>
+                    <label>First Name</label>
+                    <input type="text" required placeholder="John" className="border-2 border-black" />
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" required placeholder="Smith" className="border-2 border-black" />
+                </div>
             </div>
-            <div>
-                <label>Last Name</label>
-                <input type="text" required />
-            </div>
-            <div>
+            <div className="flex flex-col px-4">
                 <label>Email</label>
-                <input type="email" required />
+                <input type="email" required placeholder="johnsmith@domain.com" className="border-2 border-black" />
             </div>
-            <div>
+            <div className="flex flex-col px-4">
                 <label>Mobile Number</label>
-                <input type="number" />
+                <input type="number" placeholder="1234567890" className="border-2 border-black" />
             </div>
-            <div>
+            <div className="flex flex-col px-4">
                 <label>Reason for Contact</label>
-                <select required>
-                    <option value="" disabled selected>Please choose an option</option>
+                <select required className='border-2 border-black'>
+                    <option value="0" disabled selected>Please choose an option</option>
                     <option value="photo">Photography</option>
                     <option value="model">Modelling</option>
                     <option value="art">Artwork</option>
                     <option value="personal">Personal</option>
                 </select>
             </div>
-            <button type="submit">Submit</button>
+            <div className="flex flex-col px-4">
+                <label>Details</label>
+                <input type="text" required placeholder="Put important information regarding your contact request here." className='border-2 border-black h-36' />
+            </div>
+            <div className="flex px-4">
+                <button type="submit">Submit</button>
+            </div>
         </form>
         </section>
     )
