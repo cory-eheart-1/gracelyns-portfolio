@@ -18,7 +18,7 @@ function HomeMobile() {
             <Landing />
             <Blurb />
             <Galleries />
-            <Socials />
+            <Contact />
         </div>
     )
 }
@@ -85,10 +85,38 @@ function Galleries() {
     )
 }
 
-function Socials() {
+function Contact() {
     return (
         <section className="snap-center min-h-full min-w-full">
-        Hello
+        <form>
+            <div>
+                <label>First Name</label>
+                <input type="text" required />
+            </div>
+            <div>
+                <label>Last Name</label>
+                <input type="text" required />
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" required />
+            </div>
+            <div>
+                <label>Mobile Number</label>
+                <input type="number" />
+            </div>
+            <div>
+                <label>Reason for Contact</label>
+                <select required>
+                    <option value="" disabled selected>Please choose an option</option>
+                    <option value="photo">Photography</option>
+                    <option value="model">Modelling</option>
+                    <option value="art">Artwork</option>
+                    <option value="personal">Personal</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
         </section>
     )
 }
